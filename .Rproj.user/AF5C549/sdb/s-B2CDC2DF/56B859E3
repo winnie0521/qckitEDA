@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "bias.baoxplot <- function(){\n  data(geneLevelData)\n  data(yeastGC)\n  sub <- intersect(rownames(geneLevelData), names(yeastGC))\n  submat <- as.matrix(geneLevelData[sub,])\n  data <- newSeqExpressionSet(mat,\n                              phenoData=AnnotatedDataFrame(\n                                data.frame(conditions=factor(c(\"mut\", \"mut\", \"wt\", \"wt\")),\n                                           row.names=colnames(geneLevelData))),\n                              featureData=AnnotatedDataFrame(data.frame(gc=yeastGC[sub])))\n  biasPlot(data,\"gc\",ylim=c(0,5),log=TRUE)\n}\n",
+    "created" : 1517847462228.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1591706022",
+    "id" : "56B859E3",
+    "lastKnownWriteTime" : 1512430602,
+    "last_content_update" : 1512430602,
+    "path" : "~/Documents/Rdata/EDA/R/biaboxplot.R",
+    "project_path" : "R/biaboxplot.R",
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

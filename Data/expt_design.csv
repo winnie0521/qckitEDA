@@ -1,0 +1,13 @@
+Sample,Gtype,Rep
+LRL01_S1,WT,replicate1
+LRL02_S2,WT,replicate2
+LRL03_S3,WT,replicate3
+LRL04_S4,vit_2_GFP,replicate1
+LRL05_S5,vit_2_GFP,replicate2
+LRL06_S6,vit_2_GFP,replicate3
+LRL07_S7,glp_1,replicate1
+LRL08_S8,glp_1,replicate2
+LRL09_S9,glp_1,replicate3
+LRL10_S10,glp_1_vit_2_GFP,replicate1
+LRL11_S11,glp_1_vit_2_GFP,replicate2
+LRL12_S12,glp_1_vit_2_GFP,replicate3

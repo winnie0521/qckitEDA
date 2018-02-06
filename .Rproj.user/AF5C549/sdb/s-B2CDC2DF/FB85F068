@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "#' Create heatmap of the log CPM value of sampels\n#' \n#' @param dat_filt the pre-processed data of samples\n#' @param prsp the choice of whether to use pearson correlation or spearson correlation\n#' @return the heatmap of log CPM\n#' @example log_cpm_heatmap(dat_filt)\n\n\nlog_cpm_heatmap <- function(dat_filt,prsp){\n  tmpDat.cpm <- reshape2::dcast(dat_filt$long,gene~Sample,value.var = \"cpm\")[,-c(1)]\n  geneCor.log.pr <- cor(log(tmpDat.cpm+0.000001), use=\"complete.obs\", method=paste(prsp))\n  my_palette <- colorRampPalette(rev(RColorBrewer::brewer.pal(9,\"RdGy\")))(n = 300)\n  gplots::heatmap.2(geneCor.log.pr, trace=\"none\", dendrogram=\"column\",col=my_palette, scale=\"none\")\n}\n",
+    "created" : 1517847506012.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "87436523",
+    "id" : "FB85F068",
+    "lastKnownWriteTime" : 1509549861,
+    "last_content_update" : 1509549861,
+    "path" : "~/Documents/Rdata/EDA/R/log_cpm_heatmap.R",
+    "project_path" : "R/log_cpm_heatmap.R",
+    "properties" : {
+    },
+    "relative_order" : 12,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

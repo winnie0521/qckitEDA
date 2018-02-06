@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "annot_data <- function(dat_filt){\n  ensembl = biomaRt::useMart(\"ensembl\",dataset=\"celegans_gene_ensembl\")\n  filters = biomaRt::listFilters(ensembl)\n  attrs.to.get = biomaRt::listAttributes(ensembl)\n  common_ids = biomaRt::getBM(attributes=\"ensembl_gene_id\", filters='wormbase_gene',value=dat_filt$wide$gene, mart = ensembl)\n  annoDat <- biomaRt::getBM(attributes=c(\"ensembl_gene_id\",attrs.to.get[c(15,6:9,20,21,5),1]),filters = 'ensembl_gene_id',values =common_ids, mart = ensembl)\n  row.names(annoDat) <- annoDat$ensembl_gene_id\n  return(annoDat)\n  }\n",
+    "created" : 1511972068197.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2958274921",
+    "id" : "E65C53DF",
+    "lastKnownWriteTime" : 1512057741,
+    "last_content_update" : 1512057741059,
+    "path" : "~/Documents/Rdata/EDA/R/annot_data.R",
+    "project_path" : "R/annot_data.R",
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 12,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

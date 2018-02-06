@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "#' Create boxplot of the log CPM value of sampels\n#' \n#' @param dat_filt the pre-processed data of samples\n#' @return the boxplot of log CPM count of each sample\n#' @example log_cpm_box(dat_filt)\n\n\n\nlog_cpm_box <- function(dat_filt){\n  g1 <- ggplot(dat_filt$long,aes(x=Sample,y=log(cpm+0.0000001), fill=Gtype))+geom_boxplot()\n  g1+theme(axis.text.x=element_text(size=8, angle=90))+xlab(\"\")\n  print(g1)\n}\n",
+    "created" : 1517847494033.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2553777663",
+    "id" : "2C97B0DE",
+    "lastKnownWriteTime" : 1509548903,
+    "last_content_update" : 1509548903,
+    "path" : "~/Documents/Rdata/EDA/R/log_cpm_box.R",
+    "project_path" : "R/log_cpm_box.R",
+    "properties" : {
+    },
+    "relative_order" : 11,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

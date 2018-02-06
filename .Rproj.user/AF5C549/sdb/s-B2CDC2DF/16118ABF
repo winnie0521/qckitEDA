@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "#' Create MDS plot out of the wide format of the data\n#' \n#' @param wideDat the wide format of data\n#' @param cols the column index\n#' @param modMat \n#' @param modcol\n#' @param txtSize the size of text in the plot\n#' @param sampleLoc the index of the sample\n#' \n#' @return MDSplot\n\nggMDSplot <- function(wideDat, cols=c(1,2), modMat=mod.Matrix, modCol=3, txtSize=1, sampleLoc=\"newSampId\")\n{\n\n  d <- dist(t(wideDat[,-c(1)]))\n\n  mds.fit <- cmdscale(d, eig = TRUE, k = 2)\n\n  mds.d <- data.frame(x1 = mds.fit$points[, cols[1]], x2 = mds.fit$points[, cols[2]],\n                      samples = colnames(wideDat[,-c(1)]))\n  mds.d$treatment <- as.factor(modMat[match(as.character(mds.d$samples),as.character(modMat[,sampleLoc])),modCol])\n\n  g1 <- ggplot(mds.d) + geom_text(aes(x = x1, y = x2, label =samples , colour = treatment), size=txtSize)\n  return(g1)\n}\n",
+    "created" : 1517847482133.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "285577942",
+    "id" : "16118ABF",
+    "lastKnownWriteTime" : 1509548330,
+    "last_content_update" : 1509548330,
+    "path" : "~/Documents/Rdata/EDA/R/ggMDSplot.R",
+    "project_path" : "R/ggMDSplot.R",
+    "properties" : {
+    },
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

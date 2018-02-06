@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "dat_filt <- read.data(\"Data/counts.csv\",\"Data/expt_design.csv\")\n\nannoDat <- annot_data(dat_filt)\n\ntest_that(\"read-in-data is right dimension\", {\n  expect_equal(ncol(annoDat), 9)\n  expect_equal(nrow(annoDat), 14856)\n\n})\n",
+    "created" : 1517851810078.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "405286844",
+    "id" : "3BD538B5",
+    "lastKnownWriteTime" : 1517851955,
+    "last_content_update" : 1517851955754,
+    "path" : "~/Documents/Rdata/EDA/tests/testthat/testannotate.R",
+    "project_path" : "tests/testthat/testannotate.R",
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 14,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

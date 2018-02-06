@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "#' create PCA plot out of sample data\n#' @param dat_filt the dataset that is created from the read.data function\n#'\n\nPCA <- function(dat_filt,designpath){\n  geneLevelData1 <- dat_filt$wide\n  rownames(geneLevelData1) = geneLevelData1[,1]\n  geneLevelData1<-geneLevelData1[,-1]\n  newmat <- as.matrix(geneLevelData1)\n  model.matrix <- read.csv(designpath, header=T)\n  modelannot <- AnnotatedDataFrame(data.frame(model.matrix[,2],row.names=colnames(geneLevelData1)))\n  data <- EDASeq::newSeqExpressionSet(newmat,\n                              phenoData=modelannot)\n  EDASeq::plotPCA(data,col=rep(1:4, each=3),labels=TRUE,main=\"PCA plot of sample gene\")\n}\n",
+    "created" : 1512402583697.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1885718445",
+    "id" : "BACF72D3",
+    "lastKnownWriteTime" : 1512977005,
+    "last_content_update" : 1512977005803,
+    "path" : "~/Documents/Rdata/EDA/R/PCA.R",
+    "project_path" : "R/PCA.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

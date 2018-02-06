@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(yeastRNASeq)\ndata(geneLevelData)\nmat <- as.matrix(geneLevelData)\ndata <- newSeqExpressionSet(mat,\n                            phenoData=AnnotatedDataFrame(\n                              data.frame(conditions=factor(c(\"mut\", \"mut\", \"wt\", \"wt\")),\n                                         row.names=colnames(geneLevelData))))\nplotPCA(data, col=rep(1:2, each=2))\n",
+    "created" : 1512403330171.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "2109245863",
+    "id" : "C39072EC",
+    "lastKnownWriteTime" : 5292976843906638626,
+    "last_content_update" : 1512403340394,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

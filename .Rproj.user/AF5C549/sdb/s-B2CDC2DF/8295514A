@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1512404757554.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "8295514A",
+    "lastKnownWriteTime" : 4870514720,
+    "last_content_update" : 1512404757554,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "7C7EE4A1",
+        "caption" : "testa",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=testa&cache_key=7C7EE4A1",
+        "displayedObservations" : 6685,
+        "environment" : "",
+        "object" : "testa",
+        "preview" : 0,
+        "totalObservations" : 6685,
+        "variables" : 1
+    },
+    "relative_order" : 12,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

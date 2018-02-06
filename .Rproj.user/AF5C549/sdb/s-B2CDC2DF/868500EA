@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "#' read in the data and reshape it according to design matrix\n#'\n#' @param path the path to the data file\n#' @param designpath the path to the file that contains the design matrix\n#' @return the processed data of the original data file\n\nread.data <- function(path,designpath){\n  dat <- read.csv(path, header=T)\n  rows_to_keep= apply(dat[,-c(1)],1,FUN=function(x)\n  {\n    y <- 0;\n    if (all(x > 0 )) y <-1;\n    return(y)\n  }\n  )\n\n  dat_filt <- list()\n  dat_filt[[\"wide\"]]<- dat[as.logical(rows_to_keep > 0),]\n  dat_filt[[\"long\"]]<- reshape2::melt(dat_filt$wide, id=\"gene\", variable.name=\"Sample\")\n  model.matrix <- read.csv(designpath, header=T)\n  dat_filt[[\"long\"]]<- merge(dat_filt$long, model.matrix, by=\"Sample\", all=T)\n  libSizes <- aggregate(data=dat_filt$long, value~Sample,FUN=sum)\n  names(libSizes)[2] <- \"libsize\"\n  dat_filt$long <- merge(dat_filt$long, libSizes, by=\"Sample\", all=T)\n  dat_filt$long$cpm <- dat_filt$long$value*1000000/dat_filt$long$libsize\n  dat_filt$long$logcpm <- log(dat_filt$long$cpm+0.00001)\n  return(dat_filt)\n}\n",
+    "created" : 1510171115215.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3632051012",
+    "id" : "868500EA",
+    "lastKnownWriteTime" : 1510762074,
+    "last_content_update" : 1510762074960,
+    "path" : "~/Documents/Rdata/EDA/R/read.data.R",
+    "project_path" : "R/read.data.R",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

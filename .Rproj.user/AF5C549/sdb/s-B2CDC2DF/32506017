@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "#' Create MDSplot of the log CPM value of sampels\n#' \n#' @param dat_filt the pre-processed data of samples\n#' @param designpath the path to the file that contains the design matrix\n#' @return the MDSplot of log CPM\n#' @example log_cpm_mds(dat_filt,designpath)\n\nlog_cpm_mds <- function(dat_filt,designpath){\n  model.matrix <- read.csv(designpath,header=T)\n  dat_filt$long$logcpm <- log(dat_filt$long$cpm+0.00001)\n  tmpDat.cpm <- reshape2::dcast(data=dat_filt$long,gene~Sample, value.var =\"logcpm\")\n  g1<- ggMDSplot(tmpDat.cpm,modMat =model.matrix, modCol = 2,sampleLoc = \"Sample\", txtSize = 3)\n  return(g1)\n}\n",
+    "created" : 1517847590835.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1144302304",
+    "id" : "32506017",
+    "lastKnownWriteTime" : 1509549820,
+    "last_content_update" : 1509549820,
+    "path" : "~/Documents/Rdata/EDA/R/log_cpm_mds.R",
+    "project_path" : "R/log_cpm_mds.R",
+    "properties" : {
+    },
+    "relative_order" : 13,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
